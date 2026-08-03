@@ -88,3 +88,17 @@ header img {
   border-radius: 15px;
   margin-bottom: 15px;
 }
+.album-card button {
+  background: #c77dff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.album-card button:hover {
+  background: #ff8fcf;
+}
