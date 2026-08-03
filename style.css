@@ -73,3 +73,11 @@ header p {
 .album-card p {
   color: #5b4a61;
 }
+
+header img {
+  width: 80%;
+  max-width: 600px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 20px;
+}
