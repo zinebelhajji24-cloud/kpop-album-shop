@@ -18,3 +18,5 @@ stock:3,
 status:"instock"
 }
 ];
+
+// Firebase connection will be added here
