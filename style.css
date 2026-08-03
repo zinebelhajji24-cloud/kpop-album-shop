@@ -48,3 +48,28 @@ header p {
   font-size: 22px;
   cursor: pointer;
 }
+
+.albums {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.album-card {
+  background: #ffdbea;
+  width: 220px;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.album-card h2 {
+  color: #b83b7d;
+}
+
+.album-card p {
+  color: #5b4a61;
+}
