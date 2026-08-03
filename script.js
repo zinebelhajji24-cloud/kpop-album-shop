@@ -1,24 +1,3 @@
-const albums = [
-{
-id:1,
-group:"BLACKPINK",
-album:"Born Pink",
-price:250,
-image:"images/albums/born-pink.png",
-stock:5,
-status:"instock"
-},
-{
-id:2,
-group:"BTS",
-album:"Proof",
-price:300,
-image:"images/albums/proof.png",
-stock:3,
-status:"instock"
-}
-];
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
 
@@ -36,9 +15,20 @@ const db = getFirestore(app);
 
 async function loadAlbums() {
   const snapshot = await getDocs(collection(db, "albums"));
+  const container = document.querySelector(".albums");
+
+  container.innerHTML = "";
 
   snapshot.forEach((doc) => {
-    console.log(doc.data());
+    const album = doc.data();
+
+    container.innerHTML += `
+      <div class="album-card">
+        <h3>${album.group}</h3>
+        <p>${album.album}</p>
+        <p>${album.price} MAD</p>
+      </div>
+    `;
   });
 }
 
