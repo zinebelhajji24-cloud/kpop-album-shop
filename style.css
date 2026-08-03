@@ -143,3 +143,35 @@ body{
     box-shadow:0 12px 25px rgba(199,125,255,.35);
 
 }
+
+/* ===== Albums ===== */
+
+.albums{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:50px;
+}
+
+.album-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
+}
+
+.album-card:hover{
+    transform:translateY(-8px);
+}
+
+.album-card h3{
+    color:#c45a95;
+    margin-bottom:10px;
+}
+
+.album-card p{
+    margin:8px 0;
+    color:#666;
+}
