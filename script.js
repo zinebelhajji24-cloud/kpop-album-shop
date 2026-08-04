@@ -29,8 +29,7 @@ async function loadAlbums() {
 
       <div class="album-card">
 
-      <img src="${album.image}" class="album-image">
-
+     ${album.image ? `<img src="${album.image}" class="album-image">` : ""}
       <h3>${album.group}</h3>
 
       <h2>${album.album}</h2>
