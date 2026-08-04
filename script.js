@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.0/fireba
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDiZf5_fETiXKMfNSWy6ECBgH5QNWiL-CA",
+  apiKey: "YOUR_API_KEY",
   authDomain: "kpop-album-shop.firebaseapp.com",
   projectId: "kpop-album-shop",
   storageBucket: "kpop-album-shop.firebasestorage.app",
@@ -14,23 +14,37 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 async function loadAlbums() {
-  const snapshot = await getDocs(collection(db, "albums"));
+
   const container = document.querySelector(".albums");
 
   container.innerHTML = "";
 
-  snapshot.forEach((doc) => {
-const data = doc.data();
-console.log(JSON.stringify(data));
+  const snapshot = await getDocs(collection(db,"albums"));
 
-container.innerHTML += `
-  <div class="album-card">
-    <h3>${data.group}</h3>
-    <p>${data.album}</p>
-    <p>${data.price} MAD</p>
-  </div>
-`;
+  snapshot.forEach(doc=>{
+
+      const album = doc.data();
+
+      container.innerHTML += `
+
+      <div class="album-card">
+
+      <img src="${album.image}" class="album-image">
+
+      <h3>${album.group}</h3>
+
+      <h2>${album.album}</h2>
+
+      <p>${album.price} MAD</p>
+
+      <button class="buy-btn">Add to Cart</button>
+
+      </div>
+
+      `;
+
   });
+
 }
 
 loadAlbums();
