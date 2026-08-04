@@ -21,7 +21,7 @@ async function loadAlbums() {
 
   snapshot.forEach((doc) => {
 const data = doc.data();
-console.log(data);
+console.log(JSON.stringify(data));
 
 container.innerHTML += `
   <div class="album-card">
