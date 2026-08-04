@@ -1,2 +1,2 @@
-# kpop-album-shop
+# hallyu-shop
 K-pop album store website
