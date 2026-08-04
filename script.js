@@ -20,16 +20,16 @@ async function loadAlbums() {
   container.innerHTML = "";
 
   snapshot.forEach((doc) => {
-    const album = doc.data();
-    console.log(album);
+const data = doc.data();
+console.log(data);
 
-    container.innerHTML += `
-      <div class="album-card">
-        <h3>${album.group}</h3>
-        <p>${album.album}</p>
-        <p>${album.price} MAD</p>
-      </div>
-    `;
+container.innerHTML += `
+  <div class="album-card">
+    <h3>${data.group}</h3>
+    <p>${data.album}</p>
+    <p>${data.price} MAD</p>
+  </div>
+`;
   });
 }
 
